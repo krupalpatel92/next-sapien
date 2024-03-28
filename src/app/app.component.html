@@ -1,0 +1,21 @@
+<div class="page-wrapper">
+  <h2 class="page-title">{{ 'APP.DEMO_COMPONENT' | translate }}</h2>
+
+  <div class="demo-component">
+    <lib-input-field type="text" id="searchMapsString" [(ngModel)]="searchMapsString" placeholder="Search" #search></lib-input-field>
+
+    <lib-map
+      #libMaps
+      [mapType]="mapType"
+      [searchMapsString]="searchMapsString"
+      [disableNotification]="disableNotification.value"
+      [markers]="locationsMarkers"
+      [enableDrag]="enableDrag.value"
+      [initialLocation]="initialLocation"
+      (mapLoaded)="onMapLoaded($event)"
+      (mapsAlertsEvent)="mapsAlertsEvent($event)"
+      (markerClick)="onMarkerClick($event)"
+      (mapClick)="onMapClick($event)"
+    ></lib-map>
+  </div>
+</div>
